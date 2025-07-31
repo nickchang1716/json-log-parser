@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+.container {
+  padding: 20px;
+  max-width: 95%;
+  margin: auto;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #145a9e;
+}
+
+/* 整個結果區塊 */
+.result-section {
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 95%; /* 留左右空間 */
+  overflow-x: auto; /* 結果區域整體可水平捲動 */
+}
+
+/* 表格設定 */
+.result-section table {
+  width: max-content;        /* 讓表格依內容寬度延伸 */
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: auto;
+}
+
+.result-section th, .result-section td {
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  white-space: nowrap;       /* 不換行 */
+  vertical-align: top;
+}
+
+.result-section th {
+  background: #f2f2f2;
+}
+
+/* 包住表格的容器，支援水平捲動 */
+.table-wrapper {
+  overflow-x: auto;
+}
+/* 表格樣式優化 */
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-size: 12px;
+}
+
+.log-table th,
+.log-table td {
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  vertical-align: top;
+}
+
+.log-table th {
+  background: #1976d2;
+  color: white;
+  position: sticky;
+  top: 0; /* 🔹 標題列固定 */
+}
+/* 🔹 表格自適應高度 */
+#requestTable, #responseTable {
+  max-height: 80vh;
+  overflow: auto;
+}
+.tool-tabs {
+  margin: 10px 0;
+}
+.tool-tab {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+.tool-tab.active {
+  background: #388e3c;
+  color: white;
+  border-color: #388e3c;
+}
+
+.tool-content {
+  display: none;
+  margin-top: 10px;
+}
+.tool-content.active {
+  display: block;
+}
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: none; /* 預設隱藏 */
+  transition: background-color 0.3s;
+}
+
+#scrollTopBtn:hover {
+  background-color: #0056b3;
+}

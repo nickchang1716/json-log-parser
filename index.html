@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Log Parser & Beautifier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>JSON Log Parser & Beautifier</h1>
+
+  <div class="tool-tabs">
+  <button class="tool-tab active" data-target="logParserTool">Log Parser</button>
+  <button class="tool-tab" data-target="jsonBeautifierTool">JSON Beautifier</button>
+</div>
+
+<!-- Log Parser 工具 -->
+<div id="logParserTool" class="tool-content active">
+  <textarea id="logInput" placeholder="貼上含 request.uri	request.body	response.body 的 log"></textarea>
+  <button id="parseBtn">Parse Logs</button>
+
+  <div class="tab-buttons">
+    <button class="tab-btn" data-target="requestTable">Request</button>
+    <button class="tab-btn" data-target="responseTable">Response</button>
+    <button class="tab-btn" data-target="errorLog">Error</button>
+  </div>
+  <div id="requestTable" class="result-section tab-content"></div>
+  <div id="responseTable" class="result-section tab-content"></div>
+  <div id="errorLog" class="result-section tab-content"></div>
+</div>
+<button id="scrollTopBtn" title="回到最上方">▲</button>
+
+<!-- JSON Beautifier 工具 -->
+<div id="jsonBeautifierTool" class="tool-content">
+  <textarea id="jsonInput" placeholder="貼上單筆 JSON"></textarea>
+  <button id="beautifyBtn">Beautify JSON</button>
+  <pre id="beautifyResult"></pre>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
